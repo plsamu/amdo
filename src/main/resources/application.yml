@@ -1,0 +1,26 @@
+spring:
+  profiles.active: dev
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: dev
+  main:
+    banner-mode: off
+
+logging.level:
+  level: ERROR
+  org.springframework.web: ERROR
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: prod
+
+logging.level:
+  level: INFO
+  org.springframework.web: INFO
