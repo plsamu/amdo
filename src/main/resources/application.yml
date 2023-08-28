@@ -1,8 +1,13 @@
 spring:
   profiles.active: dev
-
-spring.http.multipart.max-file-size: 10MB
-spring.http.multipart.max-request-size: 11MB
+  http.multipart.max-file-size: 10MB
+  http.multipart.max-request-size: 11MB
+  # real datasource is set programmatically
+  datasource:
+    url: jdbc:sqlite:/data.db
+    driver-class-name: org.sqlite.JDBC
+  jpa:
+    database-platform: org.hibernate.community.dialect.SQLiteDialect
 
 ---
 
