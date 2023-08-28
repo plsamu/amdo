@@ -9,7 +9,7 @@ import org.springframework.boot.runApplication
 @SpringBootApplication
 class AmdoApplication : CommandLineRunner {
     override fun run(vararg args: String?) {
-        println("started")
+        println("http://locahost:8080")
     }
 }
 

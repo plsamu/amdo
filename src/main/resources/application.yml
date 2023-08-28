@@ -1,6 +1,9 @@
 spring:
   profiles.active: dev
 
+spring.http.multipart.max-file-size: 10MB
+spring.http.multipart.max-request-size: 11MB
+
 ---
 
 spring:
@@ -11,8 +14,9 @@ spring:
     banner-mode: off
 
 logging.level:
-  level: ERROR
-  org.springframework.web: ERROR
+  root: INFO
+  level: DEBUG
+  org.springframework.web: DEBUG
 
 ---
 
@@ -22,5 +26,6 @@ spring:
       on-profile: prod
 
 logging.level:
-  level: INFO
-  org.springframework.web: INFO
+  root: ERROR
+  level: ERROR
+  org.springframework.web: ERROR
