@@ -13,8 +13,9 @@ class FileEntity() {
     }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private val id: Long? = null
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
+    private var id: Long? = null
 
     @Column(nullable = false)
     var filename: String? = null

@@ -6,6 +6,19 @@
 - <https://repo1.maven.org/maven2>
 - <https://repository.jboss.org/nexus/content/repositories/public/>
 
+# hibernate 
+
+- naming strategy
+    - THIS 
+        - <https://stackoverflow.com/questions/75917729/how-to-setup-hibernate-id-db-structure-naming-strategy-to-legacy-in-springboot> 
+        - <https://jpa-buddy.com/blog/hibernate-naming-strategies-jpa-specification-vs-springboot-opinionation/>
+        - <https://stackoverflow.com/questions/41267416/hibernate-5-naming-strategy-examples>
+    - <https://docs.jboss.org/hibernate/orm/5.2/javadocs/org/hibernate/boot/model/naming/ImplicitNamingStrategy.html>
+    - <https://thorben-janssen.com/sequence-naming-strategies-in-hibernate-6/>
+    - <https://jpa-buddy.com/blog/hibernate6-whats-new-and-why-its-important/#id-generation-changes>
+- sql log
+    - <https://stackoverflow.com/questions/2536829/hibernate-show-real-sql>
+
 # sqlite
 
 - <https://www.baeldung.com/spring-boot-sqlite>

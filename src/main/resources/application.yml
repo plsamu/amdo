@@ -1,5 +1,11 @@
+spring.jpa.properties.hibernate.id.db_structure_naming_strategy: legacy
+spring.jpa.hibernate.naming:
+  implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+  physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
 spring:
   profiles.active: dev
+  jpa.hibernate.use-new-id-generator-mappings: false
   http.multipart.max-file-size: 10MB
   http.multipart.max-request-size: 11MB
   # real datasource is set programmatically
@@ -17,11 +23,14 @@ spring:
       on-profile: dev
   main:
     banner-mode: off
+  # jpa.show-sql: true
 
 logging.level:
   root: INFO
   level: DEBUG
   org.springframework.web: DEBUG
+  org.hibernate.type: DEBUG
+  # org.hibernate.SQL: DEBUG
 
 ---
 
@@ -29,8 +38,12 @@ spring:
   config:
     activate:
       on-profile: prod
+  jpa:
+    show-sql: false
 
 logging.level:
   root: ERROR
   level: ERROR
   org.springframework.web: ERROR
+  org.hibernate.type: OFF
+  org.hibernate.SQL: OFF
