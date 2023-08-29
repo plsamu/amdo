@@ -10,13 +10,13 @@ class HomeController {
 
     @GetMapping("/")
     fun method(httpServletResponse: HttpServletResponse) {
-        httpServletResponse.setHeader("Location", "/home")
+        httpServletResponse.setHeader("Location", "/home_page")
         httpServletResponse.status = 302
     }
 
-    @GetMapping("/home")
+    @GetMapping("/home_page")
     fun getHome(): String = "home"
 
-    @GetMapping("/upload")
+    @GetMapping("/upload_page")
     fun uploadFile(): String = "upload"
 }
