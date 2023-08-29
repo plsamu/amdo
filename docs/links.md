@@ -6,7 +6,13 @@
 - <https://repo1.maven.org/maven2>
 - <https://repository.jboss.org/nexus/content/repositories/public/>
 
+# application properties
+
+- <https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html>
+
 # hibernate 
+
+> Hibernate changes its GeneratedType.AUTO strategy since 5.2
 
 - naming strategy
     - THIS 

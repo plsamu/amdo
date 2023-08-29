@@ -2,6 +2,7 @@ package jakkins.automdorg.amdo.models.entities
 
 import jakarta.persistence.*
 import lombok.Data
+import org.hibernate.annotations.GenericGenerator
 
 @Entity
 @Table(name = "files")
@@ -13,13 +14,14 @@ class FileEntity() {
     }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
+    @GenericGenerator(name = "gen", strategy = "increment")
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "gen")
+    @Column(name = "id", unique = true, nullable = false)
     private var id: Long? = null
 
     @Column(nullable = false)
-    var filename: String? = null
+    private var filename: String? = null
 
     @Column(nullable = false, unique = true)
-    var hash: String? = null
+    private var hash: String? = null
 }
