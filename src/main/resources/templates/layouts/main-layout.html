@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en" th:fragment="layoutMain(title, content)">
 <head>
     <meta charset="UTF-8">
-    <title>My Application</title>
-    <link rel="stylesheet" th:href="@{/css/global.css}" />
+    <title th:text="${title}">AMDO</title>
+    <link rel="stylesheet" th:href="@{/css/global.css}"/>
 </head>
 <body>
-main-layout
-<div th:replace="content :: content"></div>
+<div th:replace="${content}"></div>
 </body>
 </html>

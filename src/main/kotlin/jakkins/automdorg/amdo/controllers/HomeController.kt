@@ -15,7 +15,7 @@ class HomeController {
     }
 
     @GetMapping("/home_page")
-    fun getHome(): String = "test-layout"
+    fun getHome(): String = "home"
 
     @GetMapping("/upload_page")
     fun uploadFile(): String = "upload"

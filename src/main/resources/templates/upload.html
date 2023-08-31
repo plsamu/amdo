@@ -1,8 +1,22 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Upload</title>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="layouts/main-layout :: layoutMain('Upload', ~{::section})"
+      lang="en">
+<section>
+    <a href="/">home</a>
+    <br>
+    upload
+    <form id="form" enctype="multipart/form-data" action="/upload" method="post">
+        <div class="input-group">
+            <label for="files">Select files</label>
+            <input name="files" id="files" type="file" accept=".md,.pdf" multiple/>
+        </div>
+        <button class="submit-btn" type="submit">Upload</button>
+    </form>
+    <div>
+        <div id="info" class="info"></div>
+        <div id="error" class="error"></div>
+    </div>
+
     <script>
 		document.addEventListener('DOMContentLoaded', () => {
 			let form = document.getElementById('form');
@@ -28,30 +42,6 @@
 					.catch(error => document.getElementById("error").innerHTML = error);
 			});
 		});
-
-
     </script>
-</head>
-<body>
-<div th:replace="layouts/main-layout :: content">
-    <div th:fragment="content">
-        <section>
-            <a href="/home">home</a>
-            <br>
-            upload
-            <form id="form" enctype="multipart/form-data" action="/upload" method="post">
-                <div class="input-group">
-                    <label for="files">Select files</label>
-                    <input name="files" id="files" type="file" accept=".md,.pdf" multiple/>
-                </div>
-                <button class="submit-btn" type="submit">Upload</button>
-            </form>
-            <div>
-                <div id="info" class="info"></div>
-                <div id="error" class="error"></div>
-            </div>
-        </section>
-    </div>
-</div>
-</body>
+</section>
 </html>

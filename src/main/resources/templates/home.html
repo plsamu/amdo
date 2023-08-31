@@ -1,11 +1,9 @@
-<html>
-<head>
-    <meta charset="ISO-8859-1" />
-    <title>Home</title>
-</head>
-<body>
-<a href="/upload_page">upload a file</a>
-<br>
-ciao
-</body>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="layouts/main-layout :: layoutMain('Home', ~{::section})"
+      lang="en">
+<section>
+    <a href="/upload_page">upload a file</a>
+    <br>
+    ciao
+</section>
 </html>
