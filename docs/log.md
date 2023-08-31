@@ -12,9 +12,9 @@
 Example:
 
 ```kotlin
-logger.error("Error message");
-logger.warn("Warning message");
-logger.info("Info message");
-logger.debug("Debug message");
-logger.trace("Trace message");
+logger.error("Error message")
+logger.warn("Warning message")
+logger.info("Info message")
+logger.debug("Debug message")
+logger.trace("Trace message")
 ```

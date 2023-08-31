@@ -10,6 +10,12 @@
 
 - <https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html>
 
+# all DB dialect for hibernate
+
+- <https://github.com/hibernate/hibernate-orm/tree/main/hibernate-core/src/main/java/org/hibernate/dialect>
+- <https://stackoverflow.com/questions/50322550/hibernate-dialect-for-mysql-8>
+  - `spring.jpa.properties.hibernate.dialect: org.hibernate.dialect.MySQLDialect`
+
 # hibernate 
 
 > Hibernate changes its GeneratedType.AUTO strategy since 5.2
@@ -31,3 +37,17 @@
 - <https://github.com/gwenn/sqlite-dialect>
     - <https://hibernate.atlassian.net/browse/HHH-10668>
         - <https://github.com/hibernate/hibernate-orm/discussions/3783> 
+
+# Front end
+
+## thymeleaf
+
+- <https://www.thymeleaf.org/doc/tutorials/3.1/usingthymeleaf.html>
+- <https://www.thymeleaf.org/doc/articles/layouts.html>
+- include vs replace
+    - <https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#difference-between-thinsert-and-threplace-and-thinclude>
+    - <https://stackoverflow.com/questions/37103958/difference-between-thymeleaf-include-and-replace>
+
+## JS
+
+- <https://stackoverflow.com/a/73358937/16988820>

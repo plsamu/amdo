@@ -1,20 +1,52 @@
-<html lang="en">
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
-    <meta charset="ISO-8859-1" />
+    <meta charset="UTF-8">
     <title>Upload</title>
+    <script>
+		document.addEventListener('DOMContentLoaded', () => {
+			let form = document.getElementById('form');
+			form.addEventListener('submit', (event) => {
+				event.preventDefault();
+
+				var fileInput = document.getElementById('files');
+				var files = fileInput.files;
+				var formdata = new FormData();
+				for (var i = 0; i < files.length; i++) {
+                    formdata.append('files', files[i]);
+                }
+
+				var requestOptions = {
+					method: 'POST',
+					body: formdata,
+					redirect: 'manual'
+				};
+
+				fetch("/upload", requestOptions)
+					.then(response => response.text())
+					.then(result => document.getElementById("info").innerHTML = result)
+					.catch(error => document.getElementById("error").innerHTML = error);
+			});
+		});
+    </script>
 </head>
 <body>
+<div th:replace="layout2 :: content">
+    < th:fragment="content">
     <a href="/home">home</a>
     <br>
     upload
-
-
-    <form id="form" enctype="multipart/form-data" action="/upload" method="post" >
+    <form id="form" enctype="multipart/form-data" action="/upload" method="post">
         <div class="input-group">
             <label for="files">Select files</label>
-            <input name="files" id="files" type="file" accept=".md,.pdf" multiple />
+            <input name="files" id="files" type="file" accept=".md,.pdf" multiple/>
         </div>
         <button class="submit-btn" type="submit">Upload</button>
     </form>
+    <div>
+        <div id="info" class="info"></div>
+        <div id="error" class="error"></div>
+    </div>
+</div>
 </body>
 </html>

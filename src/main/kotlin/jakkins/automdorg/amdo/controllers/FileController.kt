@@ -1,6 +1,5 @@
 package jakkins.automdorg.amdo.controllers
 
-import jakarta.servlet.http.HttpServletResponse
 import jakkins.automdorg.amdo.models.entities.FileEntity
 import jakkins.automdorg.amdo.repositories.FileRepository
 import jakkins.automdorg.amdo.utils.HashHelper
@@ -27,14 +26,8 @@ class FileController {
     @Autowired
     private lateinit var fileRepository: FileRepository
 
-    // TODO show already saved error
-    // TODO
-    //      "multipart/form-data" request without html form
-    //      https://stackoverflow.com/questions/19617996/file-upload-without-form
-
-
     @PostMapping("/upload")
-    fun handleFileUpload(@RequestParam("files") files: Array<MultipartFile?>, response: HttpServletResponse): Any {
+    fun handleFileUpload(@RequestParam("files") files: Array<MultipartFile?>): ResponseEntity<String> {
         for (file in files) {
             if (!isFileTypeValid(file!!)) {
                 throw IllegalArgumentException("Incorrect file type: PDF or Markdown required")
@@ -44,16 +37,12 @@ class FileController {
                 fileRepository.save(newFile)
             } catch (e: Exception) {
                 if (e.message != null && e.message!!.contains("UNIQUE constraint failed: files.hash")) {
-                    val entities = HashMap<String, String>()
-                    entities["error"] = "Hash already exists"
-                    return response.sendError(500, "Hash already exists")
-                    // return ResponseEntity<Any>(entities, HttpStatus.INTERNAL_SERVER_ERROR)
+                    return ResponseEntity("hash already exists", HttpStatus.INTERNAL_SERVER_ERROR)
                 }
-                return ResponseEntity<Any>(e.message, HttpStatus.INTERNAL_SERVER_ERROR)
+                return ResponseEntity(e.message, HttpStatus.INTERNAL_SERVER_ERROR)
             }
         }
-        return ResponseEntity.status(HttpStatus.OK).body("File saved successfully")
-        // return "upload_success" // "upload_success.html"
+        return ResponseEntity("File saved successfully", HttpStatus.OK)
     }
 
     private fun isFileTypeValid(file: MultipartFile): Boolean {

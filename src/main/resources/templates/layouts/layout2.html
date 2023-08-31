@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en" th:fragment="layout2(content)">
+<head>
+    <title>My Website</title>
+</head>
+<body>
+<header>
+    <h1>My Website</h1>
+</header>
+<main>
+    <div th:replace="${content}"></div>
+</main>
+<footer>
+    <p>&copy; 2023 My Website</p>
+</footer>
+</body>
+</html>
