@@ -1,5 +1,26 @@
+* {
+    /* optimize legibility */
+    background-color: #111;
+    color: #888;
+    font-size: 16px;
+    line-height: 1.25em;
+    text-align: justify;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-font-smoothing: antialiased !important;
+    text-rendering: optimizelegibility !important;
+    letter-spacing: .03em;
+}
+
+h1 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 5px;
+    letter-spacing: .05em
+}
+
 .info {
-    color: blue;
+    color: cyan;
 }
 
 .error {
