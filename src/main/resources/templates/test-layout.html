@@ -1,9 +1,7 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" th:replace="layouts/layout-test :: layout2(~{::section})" lang="en">
-<body>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="layouts/layout-test :: layout2('About', ~{::section})" lang="en">
 <section>
     <h2>About Us</h2>
     <p>This is the about page content.</p>
 </section>
-</body>
 </html>

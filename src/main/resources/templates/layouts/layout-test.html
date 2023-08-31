@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en" th:fragment="layout2(content)">
+<html xmlns:th="http://www.thymeleaf.org" lang="en" th:fragment="layout2(title, content)">
 <head>
-    <title>My Website</title>
+    <title th:text="${title}">My Website</title>
 </head>
 <body>
 <header>

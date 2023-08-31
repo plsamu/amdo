@@ -28,24 +28,29 @@
 					.catch(error => document.getElementById("error").innerHTML = error);
 			});
 		});
+
+
     </script>
 </head>
 <body>
-<div th:replace="layout2 :: content">
-    < th:fragment="content">
-    <a href="/home">home</a>
-    <br>
-    upload
-    <form id="form" enctype="multipart/form-data" action="/upload" method="post">
-        <div class="input-group">
-            <label for="files">Select files</label>
-            <input name="files" id="files" type="file" accept=".md,.pdf" multiple/>
-        </div>
-        <button class="submit-btn" type="submit">Upload</button>
-    </form>
-    <div>
-        <div id="info" class="info"></div>
-        <div id="error" class="error"></div>
+<div th:replace="layouts/main-layout :: content">
+    <div th:fragment="content">
+        <section>
+            <a href="/home">home</a>
+            <br>
+            upload
+            <form id="form" enctype="multipart/form-data" action="/upload" method="post">
+                <div class="input-group">
+                    <label for="files">Select files</label>
+                    <input name="files" id="files" type="file" accept=".md,.pdf" multiple/>
+                </div>
+                <button class="submit-btn" type="submit">Upload</button>
+            </form>
+            <div>
+                <div id="info" class="info"></div>
+                <div id="error" class="error"></div>
+            </div>
+        </section>
     </div>
 </div>
 </body>

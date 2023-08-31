@@ -7,8 +7,6 @@
 </head>
 <body>
 main-layout
-<!-- <div th:replace="fragments/header"></div> -->
-<div th:replace="~{::content}"></div>
-<!-- <div th:replace="fragments/footer"></div> -->
+<div th:replace="content :: content"></div>
 </body>
 </html>
